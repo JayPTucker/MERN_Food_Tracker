@@ -1,4 +1,4 @@
-const mongoose = reuqire('mongoose');
+const mongoose = require('mongoose');
 
 const foodSchema = new mongoose.Schema({
     foodName: {
