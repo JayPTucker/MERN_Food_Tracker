@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Crud APP with MERN</h1>
+
+      <label>Food Name:</label>
+      <input type="text"></input>
+      <label>Days Since I Ate:</label>
+      <input type="number"></input>
+      <button>Add to List</button>
     </div>
-  );
+  )
 }
 
 export default App;
