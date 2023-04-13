@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 
 // Import the food model from the food.js file in the models folder
-const FoodModel = require('./models/food');
+const FoodModel = require('./models/Food');
 
 // Middleware to parse the body of the request as JSON
 app.use(express.json())
@@ -35,9 +35,25 @@ app.post('/insert', async (req, res) => {
     }
 });
 
+app.get('/read', async (req, res) => {
+    FoodModel.find({})
+        // Below we are using the .then() method to get the result of the query and send it to the client
+        .then(result => {
+        res.send(result);
+        })
+        // Below we are using the .catch() method to get the error and send it to the client
+        .catch(err => {
+        res.send(err);
+        })
+    });
+
+    // Below is what you would do if you wanted to find all names under "Apple"
+    // FoodModel.find({ $where: {foodName: "Apple"}} );
+
 // App listens on port 3001 for requests from the client
 app.listen(3001, () => {
     console.log('Server is running on port 3001');
 });
 
 // Start the server app by typing in the terminal: node index.js
+// For the server to refresh everytime you save, run in the terminal: npm run devStart
