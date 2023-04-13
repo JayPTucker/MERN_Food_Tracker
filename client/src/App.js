@@ -36,6 +36,10 @@ function App() {
     })
   }
 
+  const deleteFood = (id) => {
+    Axios.delete(`http://localhost:3001/delete/${id}`)
+  }
+
   return (
     <div className="App">
       <h1>Crud APP with MERN</h1>
@@ -71,9 +75,10 @@ function App() {
           <input type="text" placeholder="new food name"
           onChange={(event) => {setNewFoodName(event.target.value)
             }}></input>
+
           <button onClick={()=> updateFood(val._id)}>Update</button>
 
-          <button>Delete</button>
+          <button onClick={()=> deleteFood(val._id)}>Delete</button>
           </div>
       })}
 

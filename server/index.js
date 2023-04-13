@@ -57,6 +57,8 @@ app.put('/update', async (req, res) => {
 app.delete("/delete/:id", async (req, res) => {
     const id = req.params.id;
     
+    await FoodModel.findByIdAndRemove(id).exec();
+    res.send("deleted");
     })
 
 // This is our get method to get all the data from the database and send it to the client (prints on the screen)
