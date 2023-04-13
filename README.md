@@ -1,2 +1,2 @@
 # MongoDB_list
-Inventory sorting system using ReactJS and MongoDB
+WIP foods list system using ReactJS and MongoDB - Database and React practice
