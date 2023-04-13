@@ -1,7 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+
 
 // Import the food model from the food.js file in the models folder
 const FoodModel = require('./models/Food');
@@ -12,8 +15,7 @@ app.use(express.json())
 app.use(cors())
 
 // Connect to the database
-mongoose.connect('mongodb+srv://newuser:pass1234@crud.0pme8m8.mongodb.net/food', 
-{
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
 });
 
