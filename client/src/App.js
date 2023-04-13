@@ -68,7 +68,7 @@ function App() {
 
       {/* Below we are adding our data to the screen. */}
       {foodList.map((val, key) => {
-        return <div class="item-div" key={key}>
+        return <div className="item-div" key={key}>
           <h1> {val.foodName} </h1>
           <h1> {val.daysSinceIAte}</h1>
 

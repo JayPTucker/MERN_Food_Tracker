@@ -57,6 +57,7 @@ app.put('/update', async (req, res) => {
 app.delete("/delete/:id", async (req, res) => {
     const id = req.params.id;
     
+    // Delete the food from the database with the id that was passed in the request parameters
     await FoodModel.findByIdAndRemove(id).exec();
     res.send("deleted");
     })
