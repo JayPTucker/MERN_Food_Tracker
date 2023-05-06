@@ -14,6 +14,16 @@ app.use(express.json())
 // Middleware to allow cross-origin requests
 app.use(cors())
 
+if (!process.env.MONGODB_URI) {
+    console.error('MONGODB_URI not defined in environment variables');
+    process.exit(1);
+  }
+  
+  mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+  });
+  
+
 // Connect to the database
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
