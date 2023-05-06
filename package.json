@@ -4,9 +4,17 @@
   "description": "A MERN stack food tracker application",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "client": "cd client && npm start"
-  },
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start:prod": "npm run build && npm run server",
+    "server": "nodemon server/index.js",
+    "client": "npm run start --prefix client",
+    "devStart": "nodemon server/index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },  
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
