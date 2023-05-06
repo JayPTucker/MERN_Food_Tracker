@@ -1,0 +1,13 @@
+{
+  "name": "mern-food-tracker",
+  "version": "1.0.0",
+  "description": "A MERN stack food tracker application",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.9"
+  }
+}
