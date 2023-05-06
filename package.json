@@ -4,7 +4,8 @@
   "description": "A MERN stack food tracker application",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "client": "cd client && npm start"
   },
   "dependencies": {
     "cors": "^2.8.5",
